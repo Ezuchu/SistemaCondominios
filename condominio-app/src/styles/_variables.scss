@@ -1,0 +1,46 @@
+// --------------------------------------------------
+// 🎨 Paleta de Colores
+// --------------------------------------------------
+
+$color-primario: #002D7A;            // Azul oscuro principal
+$color-secundario: #0043C3;          // Azul medio
+$color-informativo: #0059FF;         // Azul brillante (info)
+$color-azul-claro: #D6E6FF;          // Azul suave (fondos)
+
+$color-peligro: #FF651E;             // Naranja fuerte (errores, alertas)
+$color-naranja: #FFA801;             // Naranja medio
+$color-amarillo: #FFCC65;            // Amarillo suave (advertencias)
+$color-amarillo-claro: #FFF79E;      // Amarillo pálido (fondos suaves)
+
+$color-éxito: #28a745;               // Verde clásico para éxito
+$color-claro: #f8f9fa;               // Fondo claro general
+$color-oscuro: #343a40;              // Texto fuerte
+$color-fondo: #f4f6fa;               // Fondo base del sistema
+
+// --------------------------------------------------
+// ✍️ Tipografía
+// --------------------------------------------------
+
+$fuente-base: 'Montserrat', sans-serif;
+$fuente-encabezados: 'Montserrat', sans-serif;
+
+// Encabezados
+$tamaño-h1: 26px;
+$altura-h1: 160%;
+$peso-h1: 600; // SemiBold
+
+$tamaño-h2: 22px;
+$altura-h2: 140%;
+$peso-h2: 500; // Medium
+
+$tamaño-h3: 19px;
+$altura-h3: 120%;
+$peso-h3: 300; // Light
+
+$tamaño-h4: 16px;
+$altura-h4: 100%;
+$peso-h4: 200; // Thin
+
+// Texto base
+$tamaño-fuente-base: 1rem;
+$peso-fuente-base: 400;
