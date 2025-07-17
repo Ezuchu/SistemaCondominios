@@ -1,14 +1,17 @@
 <template>
   <div class="form-container">
     <form @submit.prevent="login">
-      <div class="logo mb-3">
+      <div class="logo mb-4">
         <img src="@/assets/Logo.png" alt="ISLAND WINDS" class="img-fluid">
       </div>
-      <div class="mb-3">
-        <label for="user" class="form-label">Usuario</label>
-        <input v-model="user" type="text" class="form-control custom-input" id="user" required>
+      <div v-if="errorMsg" class="alert alert-danger text-center py-2 mb-3" role="alert">
+        {{ errorMsg }}
       </div>
-      <div class="mb-3">
+      <div class="mb-4">
+        <label for="user" class="form-label">Usuario</label>
+        <input v-model="email" type="text" class="form-control custom-input" id="user" required>
+      </div>
+      <div class="mb-4">
         <label for="password" class="form-label">Contraseña</label>
         <input v-model="password" type="password" class="form-control custom-input" id="password" required>
       </div>
@@ -18,13 +21,36 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref } from 'vue';
+import { useRouter } from 'vue-router'; 
+import { users } from '@/mock/users'; 
 
-const user = ref('')
-const password = ref('')
+const email = ref('');
+const password = ref('');
+const errorMsg = ref('');
+const router = useRouter();
 
 function login() {
-  alert(`user: ${user.value}\nPassword: ${password.value}`)
+  const user = users.find(
+    (u) => u.username === email.value && u.password === password.value
+  );
+
+  if (user) {
+    errorMsg.value = '';
+    switch (user.role) {
+      case 'admin':
+        router.push('/admin');
+        break;
+      case 'propietario':
+        router.push('/propietario');
+        break;
+      case 'residente':
+        router.push('/residente');
+        break;
+    }
+  } else {
+    errorMsg.value = 'Credenciales incorrectas';
+  }
 }
 </script>
 
@@ -55,7 +81,6 @@ function login() {
 .custom-btn {
   background-color: var(--color-primario);
   color: var(--color-fondo);
-  border: none;
   padding: 0.75rem;
   font-size: 1rem;
   border-radius: 0.5rem;
