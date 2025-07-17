@@ -1,27 +1,28 @@
 <template>
-  <div class="auth-container">
-    <h2 class="mb-4 text-center">Iniciar Sesión</h2>
-    <formulario />
-    <div class="mt-3 text-center">
-      <router-link to="/recuperar-password">¿Olvidaste tu contraseña?</router-link>
-    </div>
+  <div class="login-container">
+      <Formulario />
   </div>
 </template>
 
 <script setup>
-import formulario from '../components/formulario.vue';
-
+import Formulario from '@/modules/auth/components/formulario.vue'
 </script>
 
 <style scoped lang="scss">
-@import '@/styles/variables';
+.login-container {
+  background-image: url('@/assets/loginFondo.png'); /* Reemplaza con la ruta de tu imagen */
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-.auth-container {
-  max-width: 400px;
-  margin: 3rem auto;
-  background: $color-tarjeta;
+.login-box {
+  background-color: rgba(255, 255, 255, 0.8); /* Fondo blanco semi-transparente */
   padding: 2rem;
   border-radius: 1rem;
-  box-shadow: 0 2px 8px rgba(30,41,59,0.08);
+  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
 }
 </style>

@@ -1,3 +1,132 @@
 //@import './styles/variables';
 @import 'bootstrap/scss/bootstrap';
 
+// Reset (inspirado en Normalize.css)
+html {
+  line-height: 1.15;
+  /* iOS Safari y versiones antiguas de WebKit */
+  -webkit-text-size-adjust: 100%;
+  
+  /* IE Mobile (opcional si apuntas a Windows Phone) */
+  -ms-text-size-adjust: 100%;
+  
+  /* navegadores modernos: Chrome 54+, Edge 79+, Firefox, Samsung Internet, etc. */
+  text-size-adjust: 100%;
+}
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+// 2. Variables CSS en :root para tokens de diseño
+:root {
+  --color-primario: #124db5;
+  --color-secundario: #0043C3;
+  --color-informativo: #0059FF;
+  --color-azul-claro: #D6E6FF;
+  --color-peligro: #FF651E;
+  --color-naranja: #FFA801;
+  --color-amarillo: #FFCC65;
+  --color-amarillo-claro: #FFF79E;
+  --color-éxito: #28a745;
+  --color-claro: #f8f9fa;
+  --color-oscuro: #343a40;
+  --color-fondo: #ffffff;
+  --color-tarjeta: #e7e7e7d6;
+
+  --spacing-unit: 1rem;
+
+  --font-base: 'Montserrat', sans-serif;
+  --font-size-base: 1rem;
+  --font-size-h1: 2rem;
+  --font-size-h2: 1.5rem;
+  --font-size-h3: 1.25rem;
+  --font-size-h4: 1rem;
+  --line-height-base: 1.6;
+}
+
+// 3. Tipografía base y body
+body {
+  font-family: var(--font-base);
+  font-size: var(--font-size-base);
+  color: var(--color-oscuro);
+  background: var(--color-fondo);
+  line-height: var(--line-height-base);
+}
+
+// 4. Jerarquía de headings
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-base);
+  font-weight: 600;
+  margin-bottom: calc(var(--spacing-unit) / 2);
+  color: var(--color-primario);
+}
+h1 { font-size: var(--font-size-h1); }
+h2 { font-size: var(--font-size-h2); }
+h3 { font-size: var(--font-size-h3); }
+h4 { font-size: var(--font-size-h4); }
+h5, h6 { font-size: 0.9rem; }
+
+// 5. Estilos para enlaces, párrafos y listas
+a {
+  color: var(--color-informativo);
+  text-decoration: none;
+  transition: color 0.2s;
+  &:hover, &:focus {
+    color: var(--color-secundario);
+    text-decoration: underline;
+  }
+}
+p {
+  margin-bottom: var(--spacing-unit);
+}
+ul, ol {
+  margin-left: var(--spacing-unit);
+  margin-bottom: var(--spacing-unit);
+}
+
+// 6. Layout y contenedores
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-unit);
+}
+
+// Helpers de grid/flex
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -0.5rem;
+  margin-left: -0.5rem;
+}
+.col {
+  flex: 1 0 0%;
+  padding-right: 0.5rem;
+  padding-left: 0.5rem;
+}
+.flex { display: flex; }
+.justify-center { justify-content: center; }
+.align-center { align-items: center; }
+
+// 7. Clases utilitarias
+.m-1 { margin: calc(var(--spacing-unit) / 2) !important; }
+.m-2 { margin: var(--spacing-unit) !important; }
+.mt-3 { margin-top: calc(var(--spacing-unit) * 1.5) !important; }
+.p-1 { padding: calc(var(--spacing-unit) / 2) !important; }
+.p-2 { padding: var(--spacing-unit) !important; }
+
+.text-center { text-align: center !important; }
+.text-uppercase { text-transform: uppercase !important; }
+
+.visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0,0,0,0) !important;
+  border: 0 !important;
+}
+
