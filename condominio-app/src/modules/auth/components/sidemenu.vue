@@ -5,7 +5,7 @@
       <i class="fas fa-bars"></i>
     </button>
 
-    <div class="p-3" v-if="isOpen">
+    <div class="p-0" v-if="isOpen">
       <ul class="nav flex-column">
         <li class="nav-item">
           <router-link to="/login" class="nav-link">Dashboard</router-link>
@@ -78,7 +78,9 @@ export default {
 
 .nav-link {
   color: $color-fondo;
-  font-weight: bold;
+  font-weight: $peso-h1;
+  border-top-left-radius: 20px; /* Borde redondeado superior izquierdo */
+  border-bottom-left-radius: 20px; /* Borde redondeado inferior izquierdo */
   padding: 10px 15px;
   transition: background-color 0.3s;
 

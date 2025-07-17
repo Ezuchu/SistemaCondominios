@@ -111,24 +111,45 @@ export default {
 }
 </script>
 
-<style lang ="scss">
-
+<style lang="scss">
+@import '@/styles/variables';
 .table-responsive {
     background-color: white;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    overflow: hidden; /* Esto asegura que los bordes internos también se redondeen */
+    border: 2px groove $color-naranja;
+}
+
+.table {
+    color: $color-primario; /* Color azul para el texto de la tabla */
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 10px;
+    overflow: hidden; /* Para mantener los bordes redondeados */
+    
+    th, td {
+        border-top: none;
+        border-bottom: 1px solid #e0e0e0;
+        padding: 16px;
+    }
 }
 
 .table thead {
     background-color: var(--light-gray);
+    th {
+        font-size: $tamaño-fuente-base;
+        color: $color-primario; /* Un azul más oscuro para los encabezados */
+        padding: 16px;
+    }
 }
 
 .expand-btn {
     background: none;
     border: none;
     cursor: pointer;
-    font-size: 1.2rem;
-    color: #333;
+    font-size: $tamaño-fuente-base;
+    color: $color-primario; /* Azul para el botón de expansión */
     outline: none;
 }
 
@@ -140,6 +161,13 @@ export default {
 .expandable-row {
     cursor: pointer;
     transition: background-color 0.2s;
+    td
+    {
+        font-size: $tamaño-fuente-base;
+        font-weight: $peso-fuente-base;
+        font-family: $fuente-base;
+        color: $color-primario;
+    }
 }
 
 .expandable-row:hover {
@@ -151,6 +179,8 @@ export default {
     padding: 15px;
     background-color: #f9f9f9;
     border-top: 1px solid #eee;
+    font-family: $fuente-base;
+    color: $color-primario; /* Azul para el texto de los detalles */
 }
 
 .row-details.show {
@@ -159,11 +189,20 @@ export default {
 
 .detail-item {
     margin-bottom: 8px;
+
+    span
+    {
+        font-size: $tamaño-fuente-base;
+        font-family: $fuente-base;
+        color: $color-primario; /* Azul para el texto de los detalles */
+    }
 }
 
 .detail-label {
     font-weight: 600;
-    color: var(--secondary-color);
+    /*color: var(--secondary-color);*/
     display: inline-block;
+    min-width: 100px;
+    color: $color-primario; /* Azul más oscuro para las etiquetas */
 }
 </style>
