@@ -286,6 +286,7 @@
 
 <script setup>
 import { ref, computed, nextTick } from 'vue'
+import { useRouter } from 'vue-router'
 import tarjetaResumen from './components/tarjetaResumen.vue'
 import avisosCarrusel from './components/avisosCarrusel.vue'
 import pagos from './views/pagos.vue'
@@ -300,6 +301,7 @@ const sidebarCollapsed = ref(false)
 const currentView = ref('dashboard')
 const saldoActual = ref(1200)
 const notificacionesCount = ref(3)
+const router = useRouter()
 
 // Modales
 const modalAvisoVisible = ref(false)
@@ -475,10 +477,10 @@ const getToastIcon = (type) => {
   return icons[type] || 'bi-info-circle'
 }
 
-const logout = () => {
+const logout = async () => {
   showToast('Cerrando sesión...', 'info')
   setTimeout(() => {
-    console.log('Logout')
+    router.push({ name: 'login' })
   }, 1000)
 }
 </script>
