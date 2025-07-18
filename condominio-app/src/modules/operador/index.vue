@@ -244,6 +244,7 @@ import calendario from './views/calendario.vue'
 import avisos from './views/avisos.vue'
 import crearActividad from './views/crearAtividad.vue'
 import crearAviso from './views/crearAviso.vue'
+import router from '../../router'
 
 const showMobileSidebar = ref(false)
 const sidebarCollapsed = ref(false)
@@ -353,7 +354,7 @@ const getToastIcon = (type) => {
 const logout = () => {
   showToast('Cerrando sesión...', 'info')
   setTimeout(() => {
-    console.log('Logout')
+    router.push({ name: 'login' })
   }, 1000)
 }
 </script>
