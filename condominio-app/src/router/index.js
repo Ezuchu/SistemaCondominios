@@ -20,7 +20,6 @@ const routes = [
       { path: 'pagos', component: () => import('../modules/propietario/views/pagos.vue') },
       { path: 'estados-cuenta', component: () => import('../modules/propietario/views/estadoCuenta.vue') },
       { path: 'avisos', component: () => import('../modules/propietario/views/avisos.vue') },
-      { path: 'avisos/:id', component: () => import('../modules/propietario/views/avisosDetalle.vue') },
       { path: 'perfil', component: () => import('../modules/propietario/views/perfil.vue') },
     ]
   },
