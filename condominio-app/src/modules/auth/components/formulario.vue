@@ -44,8 +44,8 @@ function login() {
       case 'propietario':
         router.push('/propietario');
         break;
-      case 'residente':
-        router.push('/residente');
+      case 'operador':
+        router.push('/operador');
         break;
     }
   } else {
