@@ -624,7 +624,7 @@ const editarAviso = (id) => {
     padding: 1.5rem;
     overflow: visible;
   }
-}
+} 
 
 .filters-grid {
   display: grid;

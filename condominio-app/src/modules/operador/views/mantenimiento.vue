@@ -524,7 +524,7 @@ const marcarCompletada = (id) => {
 .filter-group {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+
   
   &.filter-group--actions {
     @media (min-width: 576px) {
