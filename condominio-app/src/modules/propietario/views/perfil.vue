@@ -55,6 +55,11 @@
               <button class="btn btn-outline-primary" @click="editarPerfil">
                 <i class="bi bi-pencil me-2"></i>
                 Editar Información
+                <modalEditarPerfil 
+                  v-if="mostrarModal" 
+                  :show="mostrarModal" 
+                  @close="mostrarModal = false"
+                />
               </button>
             </div>
           </div>
@@ -197,6 +202,7 @@
 <script setup>
 import { ref } from 'vue'
 import modalEditarPerfil from '../components/modalEditarPerfil.vue'
+const mostrarModal = ref(false)
 
 defineEmits(['back'])
 
@@ -256,8 +262,10 @@ const formatearFecha = (fecha) => {
   })
 }
 
+
 const editarPerfil = () => {
-  // Aquí puedes abrir un modal o navegar a la edición
+  mostrarModal.value = true
   console.log('Editar perfil')
 }
+
 </script>

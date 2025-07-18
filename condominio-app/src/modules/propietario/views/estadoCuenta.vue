@@ -510,6 +510,7 @@ const pagarEstado = (id) => {
   &.filters-content--show {
     max-height: 300px;
     padding: 1.5rem;
+    margin-bottom: 1.5rem;
   }
 }
 
@@ -530,7 +531,6 @@ const pagarEstado = (id) => {
 .filter-group {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
   
   &.filter-actions {
     flex-direction: row;
@@ -980,4 +980,5 @@ const pagarEstado = (id) => {
 .text-danger {
   color: var(--color-peligro) !important;
 }
+
 </style>
