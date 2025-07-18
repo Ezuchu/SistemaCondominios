@@ -1,7 +1,7 @@
 <template>
   <div class="d-flex">
     <sidebar />
-    <main class="flex-grow-1 p-4">
+    <main class="flex-grow-1 p-4" style="margin-left: var(--sidebar-width);">
       <h2 class="mb-4">Bienvenido, Propietario</h2>
       <div class="row mb-4">
         <tarjetaResumen titulo="Saldo Actual de mi Propiedad" valor="$1,200" icono="bi-cash-stack" />
